@@ -1,0 +1,6 @@
+bucket         = "replace-with-globally-unique-state-bucket"
+key            = "arrise-assignment/ec2/terraform.tfstate"
+region         = "us-east-1"
+dynamodb_table = "arrise-terraform-locks"
+encrypt        = true
+

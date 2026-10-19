@@ -1,0 +1,11 @@
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+backend.hcl
+ec2/keys/
+platform/*.tfplan
+*.pem
+*.key
+crash.log

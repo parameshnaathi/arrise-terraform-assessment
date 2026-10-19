@@ -1,0 +1,55 @@
+aws_region = "us-east-1"
+aws_profile = "default"
+
+# Replace these with IDs from your VPC. All five instances share this subnet and security group.
+subnet_id          = "subnet-0123456789abcdef0"
+security_group_ids = ["sg-0123456789abcdef0"]
+
+protected_instance_name = "critical-prod-01"
+
+instances = {
+  critical-prod-01 = {
+    instance_type    = "t3.large"
+    root_volume_type = "gp3"
+    root_volume_size = 32
+    key_name         = "critical-prod-key"
+    environment      = "production"
+    owner             = "platform"
+  }
+  app-stage-01 = {
+    instance_type    = "t3.medium"
+    root_volume_type = "gp2"
+    root_volume_size = 24
+    key_name         = "app-stage-key"
+    environment      = "staging"
+    owner             = "application"
+  }
+  database-prod-01 = {
+    instance_type    = "m6i.large"
+    root_volume_type = "gp3"
+    root_volume_size = 100
+    key_name         = "database-prod-key"
+    environment      = "production"
+    owner             = "data"
+  }
+  worker-dev-01 = {
+    instance_type    = "t3.small"
+    root_volume_type = "standard"
+    root_volume_size = 16
+    key_name         = "worker-dev-key"
+    environment      = "development"
+    owner             = "platform"
+  }
+  batch-test-01 = {
+    instance_type    = "c6i.large"
+    root_volume_type = "gp2"
+    root_volume_size = 200
+    key_name         = "batch-test-key"
+    environment      = "test"
+    owner             = "analytics"
+  }
+}
+
+tags = {
+  Project = "arrise-devops-assignment"
+}

@@ -1,0 +1,18 @@
+aws_region        = "us-east-1"
+account_a_profile = "default"
+account_b_profile = "account-b"
+account_a_id      = "593602868022"
+account_b_id      = "795346865572"
+
+artifact_bucket  = "replace-with-globally-unique-account-a-bucket"
+target_s3_bucket = "replace-with-globally-unique-account-b-bucket"
+
+ecr_repository_name        = "arrise-application"
+ecs_cluster_name           = "arrise-cluster"
+ecs_service_name           = "arrise-service"
+ecs_task_definition_family = "arrise-task"
+
+# Replace these with at least two public subnets in different availability zones
+# and a security group in Account A.
+ecs_subnet_ids       = ["subnet-0123456789abcdef0", "subnet-0123456789abcdef1"]
+ecs_security_group_id = "sg-0123456789abcdef0"

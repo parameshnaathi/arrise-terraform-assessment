@@ -1,0 +1,21 @@
+aws_region        = "us-east-1"
+account_a_profile = "default"
+account_b_profile = "account-b"
+account_a_id      = "593602868022"
+account_b_id      = "795346865572"
+
+# Set to the exact bucket in Account B. roleC receives full S3 access only to this bucket and its objects.
+target_s3_bucket = "replace-with-rolec-target-bucket"
+
+# CI can read only this Account A artifacts bucket.
+artifact_bucket = "replace-with-ci-artifacts-bucket"
+
+ecr_repository_name        = "arrise-application"
+ecs_cluster_name           = "arrise-cluster"
+ecs_service_name           = "arrise-service"
+ecs_task_definition_family = "arrise-task"
+
+# Supply only roles actually referenced as taskRoleArn/executionRoleArn in the registered task definition.
+ecs_task_role_arns = [
+  "arn:aws:iam::593602868022:role/arrise-ecs-task-execution",
+]
