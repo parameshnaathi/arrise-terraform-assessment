@@ -1,5 +1,3 @@
-# Notes and assumptions
-
 ## Task 1 — Multi-instance EC2 provisioning
 
 ### 1.a Protected instance and `prevent_destroy`
